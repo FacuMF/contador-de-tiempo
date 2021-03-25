@@ -250,13 +250,13 @@ void mostrarUso(char estado) {
 		USO_ALTO = APAGADO;
 		break;
 	case MEDIO:
-		USO_BAJO = ENCENDIDO;
+		USO_BAJO = APAGADO;
 		USO_MEDIO = ENCENDIDO;
 		USO_ALTO = APAGADO;
 		break;
 	case ALTO:
-		USO_BAJO = ENCENDIDO;
-		USO_MEDIO = ENCENDIDO;
+		USO_BAJO = APAGADO;
+		USO_MEDIO = APAGADO;
 		USO_ALTO = ENCENDIDO;
 		break;
 	case OFF:

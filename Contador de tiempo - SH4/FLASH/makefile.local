@@ -6,6 +6,6 @@
 
 export HC08ToolsEnv=$(CWInstallLocationEnv)/MCU/prog
 export GNU_Make_Install_DirEnv=$(CWInstallLocationEnv)/gnu/bin
-export ProjDirPath=C:/Users/Pablo/workspace/Contador de tiempo - SH4
+export ProjDirPath=D:/Documentos/Airecontrol/Proyectos/Controlador de velocidad/contador-de-tiempo/Contador de tiempo - SH4
 export CWInstallLocationEnv=C:/Freescale/CW MCU v11.1
 export MCUToolsBaseDirEnv=$(CWInstallLocationEnv)/MCU

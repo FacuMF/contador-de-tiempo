@@ -27,7 +27,7 @@ _startupData is allocated at 0xF084 and uses 6 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     1
   _Range   pZeroOut       0x100     36
-  _Copy    *toCopyDownBeg 0xF94E
+  _Copy    *toCopyDownBeg 0xF92B
 } _startupData;
 
 *********************************************************************************************
@@ -37,8 +37,8 @@ Section Name                    Size  Type     From       To       Segment
 .data                             13   R/W      0x100      0x10C   RAM
 .init                            132     R     0xF000     0xF083   ROM
 .startData                        14     R     0xF084     0xF091   ROM
-.text                           2236     R     0xF092     0xF94D   ROM
-.copy                             19     R     0xF94E     0xF960   ROM
+.text                           2201     R     0xF092     0xF92A   ROM
+.copy                             19     R     0xF92B     0xF93D   ROM
 .abs_section_ffcc                  2     R     0xFFCC     0xFFCD   .absSeg0
 .abs_section_0                     1   N/I        0x0        0x0   .absSeg1
 .abs_section_1                     1   N/I        0x1        0x1   .absSeg2
@@ -139,7 +139,7 @@ Section Name                    Size  Type     From       To       Segment
 .vectSeg94_vect                    2     R     0xFFFE     0xFFFF   .vectSeg94
 
 Summary of section sizes per section type:
-READ_ONLY (R):         965 (dec:     2405)
+READ_ONLY (R):         942 (dec:     2370)
 READ_WRITE (R/W):       54 (dec:       84)
 NO_INIT (N/I):          6C (dec:      108)
 
@@ -169,25 +169,25 @@ MODULE:                 -- i2c_c.obj --
      i                                          123       1       1       5   .common     
 MODULE:                 -- main_c.obj --
 - PROCEDURES:
-     main                                      F224     122     290       6   .text       
-     initClock                                 F346       A      10       1   .text       
-     RTC_Init                                  F350       7       7       1   .text       
-     inicializacionPuertos                     F357      21      33       1   .text       
-     inicializacionPinInterrupts               F378      31      49       1   .text       
-     iniciarCambioDeModo                       F3A9      6C     108       1   .text       
-     indicarCambioDeModo                       F415      33      51       2   .text       
-     reiniciarHoras                            F448      24      36       1   .text       
-     notificarConBuzzer                        F46C      1B      27       5   .text       
-     mostrarUso                                F487      27      39       1   .text       
-     estadoPOnOff                              F4AE      51      81       1   .text       
-     estadoPCV                                 F4FF      51      81       1   .text       
-     encender                                  F550      1D      29       1   .text       
-     leerHorasDeMemoria                        F56D      53      83       2   .text       
-     rtcInt                                    F5C0      3D      61       1   .text       
-     escribirHorasEnMemoria                    F5FD      95     149       2   .text       
-     mostrarNumero                             F692      67     103       9   .text       
-     mostrarHorasEnDisplay                     F6F9      A3     163       2   .text       
-     mostrarMinutos                            F79C      2F      47       2   .text       
+     main                                      F224     11D     285       5   .text       
+     initClock                                 F341       A      10       1   .text       
+     RTC_Init                                  F34B       7       7       1   .text       
+     inicializacionPuertos                     F352      21      33       1   .text       
+     inicializacionPinInterrupts               F373      17      23       1   .text       
+     iniciarCambioDeModo                       F38A      6C     108       1   .text       
+     indicarCambioDeModo                       F3F6      33      51       2   .text       
+     reiniciarHoras                            F429      24      36       1   .text       
+     notificarConBuzzer                        F44D      1B      27       3   .text       
+     mostrarUso                                F468      27      39       1   .text       
+     estadoPOnOff                              F48F      51      81       1   .text       
+     estadoPCV                                 F4E0      51      81       1   .text       
+     encender                                  F531      1D      29       1   .text       
+     leerHorasDeMemoria                        F54E      53      83       2   .text       
+     rtcInt                                    F5A1      3D      61       1   .text       
+     escribirHorasEnMemoria                    F5DE      95     149       2   .text       
+     mostrarNumero                             F673      67     103       9   .text       
+     mostrarHorasEnDisplay                     F6DA      9F     159       2   .text       
+     mostrarMinutos                            F779      2F      47       2   .text       
 - VARIABLES:
      usoActual                                  100       1       1       1   .data       
      digito                                     101       A      10       3   .data       
@@ -207,8 +207,8 @@ MODULE:                 -- main_c.obj --
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
 MODULE:                 -- utils_c.obj --
 - PROCEDURES:
-     delay                                     F7CB      1E      30       3   .text       
-     determinarUso                             F7E9      37      55       1   .text       
+     delay                                     F7A8      1E      30       3   .text       
+     determinarUso                             F7C6      37      55       1   .text       
 - VARIABLES:
 MODULE:                 -- start08_c.obj --
 - PROCEDURES:
@@ -287,9 +287,9 @@ MODULE:                 -- mc9s08sh4_c.obj --
      _PTAPE                                    1840       1       1       1   .abs_section_1840
      _PTASE                                    1841       1       1       0   .abs_section_1841
      _PTADS                                    1842       1       1       0   .abs_section_1842
-     _PTASC                                    1844       1       1       1   .abs_section_1844
-     _PTAPS                                    1845       1       1       2   .abs_section_1845
-     _PTAES                                    1846       1       1       3   .abs_section_1846
+     _PTASC                                    1844       1       1       0   .abs_section_1844
+     _PTAPS                                    1845       1       1       0   .abs_section_1845
+     _PTAES                                    1846       1       1       1   .abs_section_1846
      _PTBPE                                    1848       1       1       0   .abs_section_1848
      _PTBSE                                    1849       1       1       0   .abs_section_1849
      _PTBDS                                    184A       1       1       0   .abs_section_184a
@@ -317,14 +317,14 @@ MODULE:                 -- mc9s08sh4_c.obj --
      _DBGF                                     1814       2       2       0   .abs_section_1814
 MODULE:                 -- rtshc08.o (ansiis.lib) --
 - PROCEDURES:
-     _IDIVMOD                                  F820      69     105       1   .text       
-     _SPLITSIGN                                F889      1C      28       2   .text       
-     _IMUL_STAR08                              F8A5      27      39       1   .text       
-     _IDIVS_STAR08                             F8CC      1B      27       4   .text       
-     _IMODS_STAR08                             F8E7      25      37       1   .text       
-     _Jump_Table_Header_Offset                 F90C      24      36       4   .text       
-     _PUSH_CC                                  F930       F      15       1   .text       
-     _POP_CC                                   F93F       F      15       1   .text       
+     _IDIVMOD                                  F7FD      69     105       1   .text       
+     _SPLITSIGN                                F866      1C      28       2   .text       
+     _IMUL_STAR08                              F882      27      39       1   .text       
+     _IDIVS_STAR08                             F8A9      1B      27       4   .text       
+     _IMODS_STAR08                             F8C4      25      37       1   .text       
+     _Jump_Table_Header_Offset                 F8E9      24      36       4   .text       
+     _PUSH_CC                                  F90D       F      15       1   .text       
+     _POP_CC                                   F91C       F      15       1   .text       
 - VARIABLES:
 
 *********************************************************************************************
@@ -332,7 +332,7 @@ MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
   i2c_c.obj                                    2    402      0
-  main_c.obj                                  34   1447      2
+  main_c.obj                                  34   1412      2
   utils_c.obj                                  0     85      0
   start08_c.obj                                0    132      0
   mc9s08sh4_c.obj                            108      0      0
@@ -650,9 +650,9 @@ OBJECT LIST SORTED BY ADDRESS
      _PTAPE                                    1840       1       1       1   .abs_section_1840
      _PTASE                                    1841       1       1       0   .abs_section_1841
      _PTADS                                    1842       1       1       0   .abs_section_1842
-     _PTASC                                    1844       1       1       1   .abs_section_1844
-     _PTAPS                                    1845       1       1       2   .abs_section_1845
-     _PTAES                                    1846       1       1       3   .abs_section_1846
+     _PTASC                                    1844       1       1       0   .abs_section_1844
+     _PTAPS                                    1845       1       1       0   .abs_section_1845
+     _PTAES                                    1846       1       1       1   .abs_section_1846
      _PTBPE                                    1848       1       1       0   .abs_section_1848
      _PTBSE                                    1849       1       1       0   .abs_section_1849
      _PTBDS                                    184A       1       1       0   .abs_section_184a
@@ -675,35 +675,35 @@ OBJECT LIST SORTED BY ADDRESS
      i2c_start                                 F1BE      10      16       5   .text       
      i2c_rx                                    F1CE      45      69       2   .text       
      i2c_stop                                  F213      11      17       3   .text       
-     main                                      F224     122     290       6   .text       
-     initClock                                 F346       A      10       1   .text       
-     RTC_Init                                  F350       7       7       1   .text       
-     inicializacionPuertos                     F357      21      33       1   .text       
-     inicializacionPinInterrupts               F378      31      49       1   .text       
-     iniciarCambioDeModo                       F3A9      6C     108       1   .text       
-     indicarCambioDeModo                       F415      33      51       2   .text       
-     reiniciarHoras                            F448      24      36       1   .text       
-     notificarConBuzzer                        F46C      1B      27       5   .text       
-     mostrarUso                                F487      27      39       1   .text       
-     estadoPOnOff                              F4AE      51      81       1   .text       
-     estadoPCV                                 F4FF      51      81       1   .text       
-     encender                                  F550      1D      29       1   .text       
-     leerHorasDeMemoria                        F56D      53      83       2   .text       
-     rtcInt                                    F5C0      3D      61       1   .text       
-     escribirHorasEnMemoria                    F5FD      95     149       2   .text       
-     mostrarNumero                             F692      67     103       9   .text       
-     mostrarHorasEnDisplay                     F6F9      A3     163       2   .text       
-     mostrarMinutos                            F79C      2F      47       2   .text       
-     delay                                     F7CB      1E      30       3   .text       
-     determinarUso                             F7E9      37      55       1   .text       
-     _IDIVMOD                                  F820      69     105       1   .text       
-     _SPLITSIGN                                F889      1C      28       2   .text       
-     _IMUL_STAR08                              F8A5      27      39       1   .text       
-     _IDIVS_STAR08                             F8CC      1B      27       4   .text       
-     _IMODS_STAR08                             F8E7      25      37       1   .text       
-     _Jump_Table_Header_Offset                 F90C      24      36       4   .text       
-     _PUSH_CC                                  F930       F      15       1   .text       
-     _POP_CC                                   F93F       F      15       1   .text       
+     main                                      F224     11D     285       5   .text       
+     initClock                                 F341       A      10       1   .text       
+     RTC_Init                                  F34B       7       7       1   .text       
+     inicializacionPuertos                     F352      21      33       1   .text       
+     inicializacionPinInterrupts               F373      17      23       1   .text       
+     iniciarCambioDeModo                       F38A      6C     108       1   .text       
+     indicarCambioDeModo                       F3F6      33      51       2   .text       
+     reiniciarHoras                            F429      24      36       1   .text       
+     notificarConBuzzer                        F44D      1B      27       3   .text       
+     mostrarUso                                F468      27      39       1   .text       
+     estadoPOnOff                              F48F      51      81       1   .text       
+     estadoPCV                                 F4E0      51      81       1   .text       
+     encender                                  F531      1D      29       1   .text       
+     leerHorasDeMemoria                        F54E      53      83       2   .text       
+     rtcInt                                    F5A1      3D      61       1   .text       
+     escribirHorasEnMemoria                    F5DE      95     149       2   .text       
+     mostrarNumero                             F673      67     103       9   .text       
+     mostrarHorasEnDisplay                     F6DA      9F     159       2   .text       
+     mostrarMinutos                            F779      2F      47       2   .text       
+     delay                                     F7A8      1E      30       3   .text       
+     determinarUso                             F7C6      37      55       1   .text       
+     _IDIVMOD                                  F7FD      69     105       1   .text       
+     _SPLITSIGN                                F866      1C      28       2   .text       
+     _IMUL_STAR08                              F882      27      39       1   .text       
+     _IDIVS_STAR08                             F8A9      1B      27       4   .text       
+     _IMODS_STAR08                             F8C4      25      37       1   .text       
+     _Jump_Table_Header_Offset                 F8E9      24      36       4   .text       
+     _PUSH_CC                                  F90D       F      15       1   .text       
+     _POP_CC                                   F91C       F      15       1   .text       
      _Vector_25                                FFCC       2       2       0   .abs_section_ffcc
 
 *********************************************************************************************
@@ -744,22 +744,22 @@ rtshc08.o (ansiis.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xF94E ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xF92B ---- SIZE       4 ---
 Filling bytes inserted
  000D0100
-------- ROM-ADDRESS: 0xF952 ---- RAM-ADDRESS: 0x100 ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xF92F ---- RAM-ADDRESS: 0x100 ---- SIZE       1 ---
 Name of initialized Object : usoActual
  01
-------- ROM-ADDRESS: 0xF953 ---- RAM-ADDRESS: 0x101 ---- SIZE      10 ---
+------- ROM-ADDRESS: 0xF930 ---- RAM-ADDRESS: 0x101 ---- SIZE      10 ---
 Name of initialized Object : digito
  FC60DAF266 B6BEE0FEF6
-------- ROM-ADDRESS: 0xF95D ---- RAM-ADDRESS: 0x10B ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xF93A ---- RAM-ADDRESS: 0x10B ---- SIZE       1 ---
 Name of initialized Object : estado
  01
-------- ROM-ADDRESS: 0xF95E ---- RAM-ADDRESS: 0x10C ---- SIZE       1 ---
+------- ROM-ADDRESS: 0xF93B ---- RAM-ADDRESS: 0x10C ---- SIZE       1 ---
 Name of initialized Object : estadoAnterior
  02
-------- ROM-ADDRESS: 0xF95F ---- SIZE       2 ---
+------- ROM-ADDRESS: 0xF93C ---- SIZE       2 ---
 Filling bytes inserted
  0000
 
@@ -788,7 +788,7 @@ main                      USES _SOPT1 initClock inicializacionPuertos
 initClock                 USES _ICSC1 _ICSC2 _ICSSC 
 RTC_Init                  USES _RTCMOD _RTCSC 
 inicializacionPuertos     USES _PTBDD _PTCDD _PTBD _PTCD 
-inicializacionPinInterrupts USES _PTASC _PTAES _PTAPS _PTAPE 
+inicializacionPinInterrupts USES _PTAPE _PTAES 
 iniciarCambioDeModo       USES _TPM2SC _TPM2MOD _PTBD indicarCambioDeModo 
                                 auxOnOff auxCV pOnOff pCV 
 indicarCambioDeModo       USES mostrarNumero delay _PUSH_CC _POP_CC 
@@ -806,8 +806,8 @@ rtcInt                    USES _RTCSC estado timeOutServicio contadorSegundos
                                 contadorMinutos minutoCumplido cantidadHoras 
 escribirHorasEnMemoria    USES _IDIVS_STAR08 escribir_memo 
 mostrarNumero             USES _PTCDD _PTCD 
-mostrarHorasEnDisplay     USES _IMODS_STAR08 _IDIVS_STAR08 notificarConBuzzer 
-                                digito mostrarNumero delay 
+mostrarHorasEnDisplay     USES _IMODS_STAR08 _IDIVS_STAR08 digito 
+                                mostrarNumero delay 
 mostrarMinutos            USES digito mostrarNumero delay 
 delay                     USES _TPM2SC _TPM2MOD 
 _SPLITSIGN                USES _IDIVMOD 
@@ -930,8 +930,6 @@ DEPENDENCY TREE
  |  |  |  |     
  |  |  |  +- _IDIVS_STAR08        (see above)
  |  |  |  |  
- |  |  |  +- notificarConBuzzer   (see above)
- |  |  |  |  
  |  |  |  +- mostrarNumero        (see above)
  |  |  |  |  
  |  |  |  +- delay                (see above)
@@ -976,6 +974,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 4
-Total size of all blocks to be downloaded: 2405
+Number of blocks to be downloaded: 5
+Total size of all blocks to be downloaded: 2370
 

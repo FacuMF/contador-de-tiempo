@@ -103,7 +103,6 @@ void main(void) {
 				mostrarNumero(GUION); //Muestro un giuon que indica que me encuentro en modo servicio
 				if (estadoOnOff)
 					confirmacionPendiente = 1;
-				notificarConBuzzer();
 				if (estadoCV){
 					mostrarHorasEnDisplay(cantidadHoras);
 					mostrarMinutos(contadorMinutos);
@@ -161,11 +160,11 @@ void inicializacionPinInterrupts() {
 	 5. Write to PTxACK in PTxSC to clear any false interrupts.
 	 6. Set PTxIE in PTxSC to enable interrupts.*/
 
-	PTASC_PTAIE = 0; //limpio flag de interrupciones
+	/*PTASC_PTAIE = 0; //limpio flag de interrupciones
 	PTAES_PTAES1 = 1; // Detecta flancos ascendentes
 
 	PTAPS_PTAPS1 = 1; //Activo interrupciones para DC0
-	PTASC = 0b00001110; //PTAACK = 1, PTAIE = 1, PTAMOD = 0
+	PTASC = 0b00001110; //PTAACK = 1, PTAIE = 1, PTAMOD = 0*/
 
 	//Rpull up memoria
 	PTAPE_PTAPE2 = 1;
@@ -409,7 +408,7 @@ void mostrarHorasEnDisplay(int horas) {
 	}
 
 	for (i = 0; i < 4; i++) {
-		notificarConBuzzer();
+		//notificarConBuzzer();
 		mostrarNumero(digito[horasAMostrar[i]]);
 		delay(10);
 		mostrarNumero(0b00000000);
